@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="id"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Safira</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/miwa/_astro/cerita-kita.sEfS6Nbs.css">
+<style>.petal[data-astro-cid-ltaaigkk],.center[data-astro-cid-ltaaigkk],.stem[data-astro-cid-ltaaigkk],.leaf[data-astro-cid-ltaaigkk]{transform:scale(.13);opacity:0;transform-origin:50% 75%;transition:transform 1.3s cubic-bezier(.26,.76,.39,1.09),opacity 1.1s cubic-bezier(.22,.79,.54,1.06)}.bloomed[data-astro-cid-ltaaigkk] .petal[data-astro-cid-ltaaigkk],.bloomed[data-astro-cid-ltaaigkk] .center[data-astro-cid-ltaaigkk],.bloomed[data-astro-cid-ltaaigkk] .stem[data-astro-cid-ltaaigkk],.bloomed[data-astro-cid-ltaaigkk] .leaf[data-astro-cid-ltaaigkk]{transform:scale(1);opacity:1}.delay-1[data-astro-cid-ltaaigkk]{transition-delay:.1s}.delay-2[data-astro-cid-ltaaigkk]{transition-delay:.5s}.delay-3[data-astro-cid-ltaaigkk]{transition-delay:.9s}.delay-4[data-astro-cid-ltaaigkk]{transition-delay:1.3s}.delay-5[data-astro-cid-ltaaigkk]{transition-delay:1.7s}.animate-center[data-astro-cid-ltaaigkk]{transition-delay:2s}
+</style></head> <body class="relative min-h-screen overflow-x-hidden"> <!-- Star background, always behind! --> <div class="fixed inset-0 pointer-events-none z-0"> <canvas id="stars-bg" class="w-full h-full"></canvas> </div> <!-- Main content always above stars --> <main class="relative z-10">  <nav class="flex justify-center gap-4 py-5 text-white/90 text-lg sticky top-0 bg-black/70 z-30 backdrop-blur"> <a href="#ulangtahun" class="hover:text-pink-400 transition">Hallo Safira Rizki Putri</a> </nav>    <div class="flex flex-col items-center justify-center min-h-[60vh] text-center"> <h2 class="text-3xl md:text-4xl font-extrabold text-pink-500 mb-8 tracking-wide drop-shadow-pink">
+Kita Mulai Dari
+</h2> <div id="countdown-grid" class="flex flex-wrap justify-center gap-3 md:gap-6"> <!-- Timer akan diisi oleh JS --> </div> </div> <script>
+  const start = new Date("2025-08-08T00:00:00");
+
+  function pad(n) {
+    const str = Math.abs(n).toString().padStart(2, "0");
+    return n < 0 ? "-" + str : str;
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const dist = now - start;
+    const grid = document.getElementById("countdown-grid");
+    if (!grid) return;
+
+    const days = Math.floor(dist / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((dist / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((dist / (1000 * 60)) % 60);
+    const secs = Math.floor((dist / 1000) % 60);
+
+    grid.innerHTML = `
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(days)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Hari</span>
+      </div>
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(hours)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Jam</span>
+      </div>
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(mins)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Menit</span>
+      </div>
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(secs)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Detik</span>
+      </div>
+    `;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>  <div id="main-content" style="display: none"> <section class="min-h-screen flex flex-col justify-center items-center px-4 py-12 text-center"> <h1 class="text-5xl md:text-7xl font-black tracking-widest mb-4 bg-gradient-to-r from-pink-400 via-pink-300 to-pink-200 text-transparent bg-clip-text drop-shadow-lg">
+Hallo Miwa!
+</h1> <div class="w-20 h-1 rounded-full mb-6 mx-auto bg-gradient-to-r from-pink-300 via-pink-400 to-pink-200"></div> <p id="typewriter" class="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl font-medium leading-relaxed whitespace-pre-line"></p> </section> <script>
+  const text = `Akhirnya kamu buka ini…
+Terima kasih sudah meluangkan waktu untuk sampai di halaman ini.
+Sebenarnya, aku sudah menunggu cukup lama untuk menyampaikan semua ini dengan cara yang paling istimewa—melalui sesuatu yang bisa kamu kenang, kapan pun kamu mau.
+Hari ini bukan hanya tentang perasaan,  
+tapi tentang keberanian untuk jujur…  
+bahwa kamu adalah seseorang yang selama ini aku tunggu.`;
+
+  let i = 0;
+  const speed = 25;
+  const el = document.getElementById("typewriter");
+
+  function typeWriter() {
+    if (i < text.length) {
+      el.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", typeWriter);
+</script> <section id="perasaan" class="min-h-screen flex items-center justify-center px-4 py-16 bg-transparent"> <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16 w-full max-w-5xl mx-auto">  <div class="relative group flex-shrink-0"> <img src="/safira.jpg" alt="Foto Perasaan" class="rounded-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-pink-400 shadow-2xl group-hover:scale-105 transition-transform duration-300" style="background: linear-gradient(135deg,rgba(250,75,133,0.10),rgba(255,145,163,0.10));"> <div class="absolute -inset-6 rounded-2xl z-[-1] blur-2xl opacity-40 pointer-events-none bg-gradient-to-tr from-pink-400/50 via-pink-200/20 to-transparent"></div> </div>  <div class="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left"> <h2 class="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-pink-500 via-pink-300 to-pink-400 text-transparent bg-clip-text drop-shadow-[0_2px_30px_rgba(250,75,133,0.5)]">
+Mau tau dutt?
+</h2> <div class="w-20 h-1 rounded-full mb-5 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-200"></div> <p class="text-xl md:text-2xl text-white/90 mb-6 font-medium leading-relaxed">
+Dutt... aku sebenernya suka kamu, tapi bukan cuma suka yang biasa. Aku
+        suka kamu dengan cara yang gak ribut— tapi selalu ada. Perasaan suka
+        yang tenang, nggak penuh drama atau tuntutan, tapi konsisten, tulus, dan
+        selalu hadir. Aku suka cara kamu cerita, cara kamu ketawa, bahkan cara
+        kamu marah pun bikin aku sadar, kamu itu nyata... Mungkin aku gak
+        sempurna, tapi kalau kamu mau, aku pengen temenin kamu terus, mulai dari
+        halaman ini, sampai halaman seterusnya.
+</p> </div> </div> </section> <section id="ultah" class="min-h-screen flex flex-col justify-center items-center px-4 py-16" data-astro-cid-ltaaigkk> <div class="mb-10" data-astro-cid-ltaaigkk> <svg id="fancy-rose" width="300" height="320" viewBox="0 0 300 320" fill="none" class="drop-shadow-2xl" data-astro-cid-ltaaigkk> <!-- Shadow --> <ellipse cx="150" cy="295" rx="66" ry="22" fill="#ff93a3" fill-opacity="0.14" data-astro-cid-ltaaigkk></ellipse> <!-- Batang --> <rect x="146" y="210" width="8" height="70" rx="4" fill="#d4718a" class="stem" data-astro-cid-ltaaigkk></rect> <!-- Daun --> <ellipse cx="170" cy="250" rx="18" ry="7" fill="#fa4b85" fill-opacity="0.5" class="leaf" data-astro-cid-ltaaigkk></ellipse> <ellipse cx="130" cy="250" rx="18" ry="7" fill="#fa4b85" fill-opacity="0.3" class="leaf" data-astro-cid-ltaaigkk></ellipse> <!-- Outer Petals --> <path class="petal animate-petal delay-1" d="M150,55 Q220,80 220,180 Q205,240 150,240 Q95,240 80,180 Q80,80 150,55Z" fill="url(#p1)" data-astro-cid-ltaaigkk></path> <path class="petal animate-petal delay-2" d="M150,60 Q205,80 205,180 Q190,220 150,220 Q110,220 95,180 Q95,80 150,60Z" fill="url(#p2)" opacity="0.8" data-astro-cid-ltaaigkk></path> <path class="petal animate-petal delay-3" d="M150,68 Q190,90 190,175 Q178,210 150,210 Q122,210 110,175 Q110,90 150,68Z" fill="url(#p3)" opacity="0.6" data-astro-cid-ltaaigkk></path> <!-- Inner Petals --> <ellipse class="petal animate-petal delay-4" cx="150" cy="135" rx="38" ry="42" fill="url(#p4)" opacity="0.8" data-astro-cid-ltaaigkk></ellipse> <ellipse class="petal animate-petal delay-5" cx="150" cy="135" rx="28" ry="32" fill="url(#p5)" opacity="0.7" data-astro-cid-ltaaigkk></ellipse> <!-- Swirl dan Pusat Mawar --> <circle class="center animate-center" cx="150" cy="140" r="20" fill="#fff0fa" opacity="0.95" data-astro-cid-ltaaigkk></circle> <path class="center animate-center" d="M150 132 Q157 140 150 148 Q143 140 150 132Z" fill="#fbc2eb" opacity="0.9" data-astro-cid-ltaaigkk></path> <defs data-astro-cid-ltaaigkk> <linearGradient id="p1" x1="90" y1="90" x2="210" y2="230" gradientUnits="userSpaceOnUse" data-astro-cid-ltaaigkk> <stop stop-color="#fa4b85" data-astro-cid-ltaaigkk></stop> <stop offset="1" stop-color="#ffc1e3" data-astro-cid-ltaaigkk></stop> </linearGradient> <linearGradient id="p2" x1="100" y1="100" x2="200" y2="210" gradientUnits="userSpaceOnUse" data-astro-cid-ltaaigkk> <stop stop-color="#ff86b7" data-astro-cid-ltaaigkk></stop> <stop offset="1" stop-color="#ffbad6" data-astro-cid-ltaaigkk></stop> </linearGradient> <linearGradient id="p3" x1="110" y1="110" x2="190" y2="200" gradientUnits="userSpaceOnUse" data-astro-cid-ltaaigkk> <stop stop-color="#ffb8d9" data-astro-cid-ltaaigkk></stop> <stop offset="1" stop-color="#fa4b85" data-astro-cid-ltaaigkk></stop> </linearGradient> <radialGradient id="p4" cx="0.5" cy="0.6" r="0.8" data-astro-cid-ltaaigkk> <stop offset="0%" stop-color="#ffc1e3" data-astro-cid-ltaaigkk></stop> <stop offset="100%" stop-color="#fa4b85" data-astro-cid-ltaaigkk></stop> </radialGradient> <radialGradient id="p5" cx="0.5" cy="0.5" r="0.7" data-astro-cid-ltaaigkk> <stop offset="0%" stop-color="#fff0fa" data-astro-cid-ltaaigkk></stop> <stop offset="100%" stop-color="#ffc1e3" data-astro-cid-ltaaigkk></stop> </radialGradient> </defs> </svg>  <div class="text-center mt-10" data-astro-cid-ltaaigkk> <h2 class="text-3xl md:text-4xl font-bold text-pink-400 mb-4 animate-bounce" data-astro-cid-ltaaigkk>
+Ini bunga buat kamu, Dutt!
+</h2> <p class="text-xl md:text-2xl text-pink-200 max-w-lg mx-auto leading-relaxed" data-astro-cid-ltaaigkk>
+Semoga setelah bersamaku, hari-harimu selalu dipenuhi warna baru yang
+        indah—setiap harinya. 🌸✨
+</p> </div> <script>
+      // Aktifkan animasi saat SVG masuk viewport
+      const svg = document.getElementById("fancy-rose");
+      if (svg) {
+        const onIntersect = (entries) => {
+          if (entries[0].isIntersecting) {
+            svg.classList.add("bloomed");
+          }
+        };
+        const obs = new window.IntersectionObserver(onIntersect, {
+          threshold: 0.15,
+        });
+        obs.observe(svg);
+      }
+    </script> </div> </section> <section class="min-h-screen flex flex-col justify-center items-center px-4 py-14"> <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-pink-400 mb-6">
+Surat untuk Safira </h2> <div class="bg-pink-50/10 border border-pink-300/20 rounded-2xl p-7 md:p-10 font-serif text-lg md:text-xl text-pink-50 leading-relaxed shadow-2xl relative max-w-2xl w-full" style="backdrop-filter: blur(2px);"> <p class="mb-4 whitespace-pre-line">I love you, Safira.
+Aku nggak tahu harus mulai dari mana untuk ungkapin betapa bangganya aku ke kamu… Karena kamu udah melewati banyak proses, sampai akhirnya kamu jadi seseorang yang punya pemikiran sedewasa ini.
+
+Aku ingin berterima kasih kepada orang tuamu, dan juga semua orang di sekitarmu yang telah menyayangimu hingga kamu tumbuh menjadi pribadi sebaik ini.
+Aku udah lama nunggu kamu datang… untuk nemenin tulisan-tulisan cerita aku—yang nantinya akan jadi *cerita kita*—cerita yang suatu hari akan dibaca dan didengar oleh anak-anak kita nanti.
+
+Aku harap, setelah ini… kamu bisa menerima aku, dengan segala kekurangan dan kelebihanku, untuk mencintaimu sepenuhnya.
+Aku.. Aku pengen kasih dunia ini ke kamu, tapi karna itu ga mungkin. aku bakal kasih hal yang paling peberharga buat aku, yaitu duniaku.
+
+</p> <div class="absolute bottom-4 right-8 text-pink-200 text-sm font-semibold italic">
+— Putra
+</div> <svg width="120" height="30" viewBox="0 0 120 30" fill="none" class="absolute left-5 bottom-2 opacity-70"> <path d="M5 25 Q60 -15 115 25" stroke="#fa4b85" stroke-width="2" fill="none"></path> </svg> </div> </section> <section class="min-h-screen flex flex-col justify-center items-center px-4 py-16"> <h2 class="text-3xl font-bold text-pink-400 mb-8 text-center tracking-wide">
+Galeri Safira
+</h2> <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 w-full max-w-4xl"> <div class="bg-pink-50/5 border-2 border-pink-300/20 rounded-xl overflow-hidden shadow-xl flex flex-col transition-transform hover:scale-105 hover:border-pink-400 hover:shadow-pink-200/70 duration-200"> <img src="/public/galeri1.jpg" alt="Lagi dijalan." class="w-full h-56 object-cover"> <div class="p-4 text-center text-pink-200 font-medium bg-gradient-to-b from-pink-50/10 via-white/0 to-pink-50/0"> Lagi dijalan. </div> </div><div class="bg-pink-50/5 border-2 border-pink-300/20 rounded-xl overflow-hidden shadow-xl flex flex-col transition-transform hover:scale-105 hover:border-pink-400 hover:shadow-pink-200/70 duration-200"> <img src="/public/galeri2.jpg" alt="Lagi Nongkrong." class="w-full h-56 object-cover"> <div class="p-4 text-center text-pink-200 font-medium bg-gradient-to-b from-pink-50/10 via-white/0 to-pink-50/0"> Lagi Nongkrong. </div> </div><div class="bg-pink-50/5 border-2 border-pink-300/20 rounded-xl overflow-hidden shadow-xl flex flex-col transition-transform hover:scale-105 hover:border-pink-400 hover:shadow-pink-200/70 duration-200"> <img src="/public/galeri3.jpg" alt="Di Pantai." class="w-full h-56 object-cover"> <div class="p-4 text-center text-pink-200 font-medium bg-gradient-to-b from-pink-50/10 via-white/0 to-pink-50/0"> Di Pantai. </div> </div><div class="bg-pink-50/5 border-2 border-pink-300/20 rounded-xl overflow-hidden shadow-xl flex flex-col transition-transform hover:scale-105 hover:border-pink-400 hover:shadow-pink-200/70 duration-200"> <img src="/public/galeri4.jpg" alt="Di Hutan." class="w-full h-56 object-cover"> <div class="p-4 text-center text-pink-200 font-medium bg-gradient-to-b from-pink-50/10 via-white/0 to-pink-50/0"> Di Hutan. </div> </div> </div> </section> <section id="video" class="min-h-screen flex flex-col justify-center items-center px-4 py-16"> <h2 class="text-3xl md:text-4xl font-bold text-pink-400 mb-8 tracking-wide">
+Semua Tentang Kita
+</h2> <div class="w-full max-w-4xl flex flex-col items-center bg-pink-50/5 border-2 border-pink-300/20 rounded-2xl shadow-xl p-4 md:p-8"> <div class="aspect-video w-full rounded-xl overflow-hidden shadow-lg mb-4"> <iframe src="" width="100%" height="540" allow="autoplay" allowfullscreen class="w-full h-[260px] md:h-[540px] rounded-xl"></iframe> </div> <div class="text-pink-200 text-center font-medium text-lg md:text-xl">
+Coming soon ya.
+</div> </div> </section> <div class="fixed top-0 left-0 w-screen h-screen overflow-hidden pointer-events-none z-0"> <div class="love animate-fall" style="left: 8.306720534798906vw; animation-duration: 9.53854716430624s; animation-delay: 0.4131876868952189s;">
+❤️
+</div><div class="love animate-fall" style="left: 94.24202499104999vw; animation-duration: 8.215795310131258s; animation-delay: 2.5796620965449035s;">
+❤️
+</div><div class="love animate-fall" style="left: 79.14230721809513vw; animation-duration: 5.244797025863317s; animation-delay: 2.7344466980387514s;">
+❤️
+</div><div class="love animate-fall" style="left: 94.45605805496098vw; animation-duration: 6.03308754313347s; animation-delay: 4.118316229302108s;">
+❤️
+</div><div class="love animate-fall" style="left: 1.3159501077796731vw; animation-duration: 6.648682667692119s; animation-delay: 4.490878998413029s;">
+❤️
+</div><div class="love animate-fall" style="left: 98.90613913089229vw; animation-duration: 7.375889647452972s; animation-delay: 3.807697460018762s;">
+❤️
+</div><div class="love animate-fall" style="left: 41.68847584690698vw; animation-duration: 7.370086203062012s; animation-delay: 2.2929319146001292s;">
+❤️
+</div><div class="love animate-fall" style="left: 36.6017141174906vw; animation-duration: 9.320227532364214s; animation-delay: 2.087934208653234s;">
+❤️
+</div><div class="love animate-fall" style="left: 4.921409269080512vw; animation-duration: 9.827814440510629s; animation-delay: 2.902946730824546s;">
+❤️
+</div><div class="love animate-fall" style="left: 92.53397655802544vw; animation-duration: 9.410624265585842s; animation-delay: 4.415494760353244s;">
+❤️
+</div><div class="love animate-fall" style="left: 65.38506320847152vw; animation-duration: 5.5517890145739095s; animation-delay: 3.969919347150129s;">
+❤️
+</div><div class="love animate-fall" style="left: 45.02116014547586vw; animation-duration: 8.95306673459719s; animation-delay: 2.3753277974268814s;">
+❤️
+</div><div class="love animate-fall" style="left: 73.80237649617712vw; animation-duration: 7.121063866466754s; animation-delay: 4.648622419809422s;">
+❤️
+</div><div class="love animate-fall" style="left: 91.52679931505115vw; animation-duration: 8.471520966709457s; animation-delay: 3.033427448803959s;">
+❤️
+</div><div class="love animate-fall" style="left: 62.19048154442024vw; animation-duration: 8.050946947912783s; animation-delay: 0.09787024466930694s;">
+❤️
+</div><div class="love animate-fall" style="left: 45.35273225874368vw; animation-duration: 5.795118421496495s; animation-delay: 4.828733605287154s;">
+❤️
+</div><div class="love animate-fall" style="left: 6.887934271906815vw; animation-duration: 8.006906806089571s; animation-delay: 3.575540332305034s;">
+❤️
+</div><div class="love animate-fall" style="left: 20.627118375584462vw; animation-duration: 5.760497835443519s; animation-delay: 3.681347776127354s;">
+❤️
+</div><div class="love animate-fall" style="left: 35.40259302588633vw; animation-duration: 6.660664500336777s; animation-delay: 1.2380535545954263s;">
+❤️
+</div><div class="love animate-fall" style="left: 45.15096070023505vw; animation-duration: 6.686460437901189s; animation-delay: 3.4823176812424297s;">
+❤️
+</div><div class="love animate-fall" style="left: 50.60849662933431vw; animation-duration: 7.072879285297892s; animation-delay: 2.2671917819713103s;">
+❤️
+</div><div class="love animate-fall" style="left: 63.61634418985456vw; animation-duration: 7.143507440196987s; animation-delay: 0.2800540653892414s;">
+❤️
+</div><div class="love animate-fall" style="left: 16.814819391978773vw; animation-duration: 9.809585705200805s; animation-delay: 0.10202517837442193s;">
+❤️
+</div><div class="love animate-fall" style="left: 46.91246204920725vw; animation-duration: 9.735752081846954s; animation-delay: 2.079998180545628s;">
+❤️
+</div><div class="love animate-fall" style="left: 81.25825263626064vw; animation-duration: 7.136045003192917s; animation-delay: 3.01765570382158s;">
+❤️
+</div><div class="love animate-fall" style="left: 60.18171821713092vw; animation-duration: 8.213014984649678s; animation-delay: 3.449615570859944s;">
+❤️
+</div><div class="love animate-fall" style="left: 14.559104356534691vw; animation-duration: 8.185494669624871s; animation-delay: 2.3059683672643736s;">
+❤️
+</div><div class="love animate-fall" style="left: 85.07247030526133vw; animation-duration: 8.612186962638404s; animation-delay: 2.904351925348415s;">
+❤️
+</div><div class="love animate-fall" style="left: 92.1411368828162vw; animation-duration: 6.2014879352357415s; animation-delay: 4.451866682896818s;">
+❤️
+</div><div class="love animate-fall" style="left: 16.54117966646833vw; animation-duration: 8.209672826072659s; animation-delay: 4.991047646684037s;">
+❤️
+</div> </div> <!-- Form login --> <section id="login-section" class="flex flex-col items-center justify-center min-h-screen bg-black/80 z-50 fixed inset-0" style="display: none"> <form id="pw-form" class="bg-white/5 rounded-xl p-8 w-full max-w-sm shadow border border-white/10"> <h2 class="text-2xl font-bold mb-6 text-center text-white">
+Masukkan Password
+</h2> <input id="pw-input" type="password" name="password" placeholder="Password..." class="w-full p-3 rounded-lg border border-white/20 bg-black/20 mb-5 text-white placeholder:text-white/60 outline-red-400 focus:ring-2 focus:ring-red-500" required> <button type="submit" class="w-full py-3 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold transition">
+Masuk
+</button> <div id="pw-error" class="text-red-400 mt-2 text-sm text-center hidden">
+Password salah, coba lagi ya!
+</div> </form> </section> <!-- Login Script --> <script>
+      const PASSWORD = "lovesafira";
+
+      function ready(fn) {
+        if (document.readyState !== "loading") {
+          fn();
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
+      }
+
+      ready(() => {
+        const isLoggedIn = localStorage.getItem("ndutt-logged") === "1";
+        const mainContent = document.getElementById("main-content");
+        const loginSection = document.getElementById("login-section");
+
+        if (isLoggedIn) {
+          mainContent.style.display = "";
+          loginSection.style.display = "none";
+        } else {
+          mainContent.style.display = "none";
+          loginSection.style.display = "";
+        }
+
+        const form = document.getElementById("pw-form");
+        const input = document.getElementById("pw-input");
+        const error = document.getElementById("pw-error");
+
+        if (form) {
+          form.onsubmit = (e) => {
+            e.preventDefault();
+            if (input.value === PASSWORD) {
+              localStorage.setItem("ndutt-logged", "1"); // ✅ disamakan key-nya
+              error.classList.add("hidden");
+              location.reload();
+            } else {
+              error.classList.remove("hidden");
+            }
+          };
+        }
+      });
+    </script> </div>  </main> </body></html>
