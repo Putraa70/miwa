@@ -1,0 +1,43 @@
+<section
+  class="min-h-screen flex flex-col justify-center items-center px-4 py-12 text-center"
+>
+  <h1
+    class="text-5xl md:text-7xl font-black tracking-widest mb-4 bg-gradient-to-r from-pink-400 via-pink-300 to-pink-200 text-transparent bg-clip-text drop-shadow-lg"
+  >
+    Hallo Miwa!
+  </h1>
+
+  <div
+    class="w-20 h-1 rounded-full mb-6 mx-auto bg-gradient-to-r from-pink-300 via-pink-400 to-pink-200"
+  >
+  </div>
+
+  <p
+    id="typewriter"
+    class="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl font-medium leading-relaxed whitespace-pre-line"
+  >
+  </p>
+</section>
+
+<script is:inline>
+  const text = `Akhirnya kamu buka ini…
+Terima kasih sudah meluangkan waktu untuk sampai di halaman ini.
+Sebenarnya, aku sudah menunggu cukup lama untuk menyampaikan semua ini dengan cara yang paling istimewa—melalui sesuatu yang bisa kamu kenang, kapan pun kamu mau.
+Hari ini bukan hanya tentang perasaan,  
+tapi tentang keberanian untuk jujur…  
+bahwa kamu adalah seseorang yang selama ini aku tunggu.`;
+
+  let i = 0;
+  const speed = 25;
+  const el = document.getElementById("typewriter");
+
+  function typeWriter() {
+    if (i < text.length) {
+      el.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", typeWriter);
+</script>

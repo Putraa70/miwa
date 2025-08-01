@@ -1,0 +1,61 @@
+---
+const PASSWORD = "lovesafira";
+---
+
+<section
+  class="flex flex-col items-center justify-center min-h-screen bg-black/80 z-50 fixed inset-0"
+>
+  <form
+    id="pw-form"
+    class="bg-white/5 rounded-xl p-8 w-full max-w-sm shadow border border-white/10"
+  >
+    <h2 class="text-2xl font-bold mb-6 text-center text-white">
+      Masukkan Password
+    </h2>
+    <input
+      id="pw-input"
+      type="password"
+      name="password"
+      placeholder="Password..."
+      class="w-full p-3 rounded-lg border border-white/20 bg-black/20 mb-5 text-white placeholder:text-white/60 outline-red-400 focus:ring-2 focus:ring-red-500"
+      required
+    />
+    <button
+      type="submit"
+      class="w-full py-3 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold transition"
+    >
+      Masuk
+    </button>
+    <div id="pw-error" class="text-red-400 mt-2 text-sm text-center hidden">
+      Password salah, coba lagi ya!
+    </div>
+  </form>
+</section>
+
+<script is:inline>
+  function ready(fn) {
+    if (document.readyState != "loading") {
+      fn();
+    } else {
+      document.addEventListener("DOMContentLoaded", fn);
+    }
+  }
+
+  ready(() => {
+    const form = document.getElementById("pw-form");
+    const input = document.getElementById("pw-input");
+    const error = document.getElementById("pw-error");
+    if (form) {
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        if (input.value === "lovesafira") {
+          localStorage.setItem("ndutt-logged", "1");
+          error.classList.add("hidden");
+          window.location.reload();
+        } else {
+          error.classList.remove("hidden");
+        }
+      };
+    }
+  });
+</script>

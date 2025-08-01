@@ -1,0 +1,30 @@
+<!-- Star effect - always behind content, no pointer event, z-[-10] -->
+<div class="fixed inset-0 pointer-events-none z-[-10]">
+  <canvas id="stars-bg" class="w-full h-full"></canvas>
+</div>
+<script is:inline>
+  const canvas = document.getElementById("stars-bg");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < 70; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const r = Math.random() * 1.2 + 0.3;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2, false);
+        ctx.fillStyle = "rgba(255,255,255,0.8)";
+        ctx.fill();
+      }
+    }
+    setInterval(drawStars, 1200);
+    drawStars();
+  }
+</script>

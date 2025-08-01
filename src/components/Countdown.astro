@@ -1,0 +1,53 @@
+<div class="flex flex-col items-center justify-center min-h-[60vh] text-center">
+  <h2
+    class="text-3xl md:text-4xl font-extrabold text-pink-500 mb-8 tracking-wide drop-shadow-pink"
+  >
+    Kita Mulai Dari
+  </h2>
+  <div id="countdown-grid" class="flex flex-wrap justify-center gap-3 md:gap-6">
+    <!-- Timer akan diisi oleh JS -->
+  </div>
+</div>
+
+<script is:inline>
+  const start = new Date("2025-08-08T00:00:00");
+
+  function pad(n) {
+    const str = Math.abs(n).toString().padStart(2, "0");
+    return n < 0 ? "-" + str : str;
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const dist = now - start;
+    const grid = document.getElementById("countdown-grid");
+    if (!grid) return;
+
+    const days = Math.floor(dist / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((dist / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((dist / (1000 * 60)) % 60);
+    const secs = Math.floor((dist / 1000) % 60);
+
+    grid.innerHTML = `
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(days)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Hari</span>
+      </div>
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(hours)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Jam</span>
+      </div>
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(mins)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Menit</span>
+      </div>
+      <div class="flex flex-col items-center bg-pink-900/40 border-2 border-pink-400 rounded-xl px-4 py-3 m-1 shadow-lg">
+        <span class="font-black text-3xl md:text-4xl text-pink-400 drop-shadow" style="text-shadow:0 0 20px #fa4b85aa;">${pad(secs)}</span>
+        <span class="text-xs md:text-base font-medium text-pink-200 uppercase">Detik</span>
+      </div>
+    `;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>

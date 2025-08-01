@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safira</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="relative min-h-screen overflow-x-hidden">
+    <!-- Star background, always behind! -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+      <canvas id="stars-bg" class="w-full h-full"></canvas>
+    </div>
+    <!-- Main content always above stars -->
+    <main class="relative z-10">
+      <slot />
+    </main>
+  </body>
+</html>

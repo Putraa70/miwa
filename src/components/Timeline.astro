@@ -1,0 +1,21 @@
+---
+const { timeline } = Astro.props;
+---
+
+<section class="max-w-2xl mx-auto py-14">
+  <h2 class="text-3xl font-bold text-center text-red-500 mb-10">Cerita Kita</h2>
+  <ol class="relative border-l border-red-600">
+    {
+      timeline.map((item: { date: string; event: string; quote: string }) => (
+        <li class="mb-10 ml-4">
+          <div class="absolute w-3 h-3 bg-red-500 rounded-full mt-1.5 -left-1.5" />
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400">
+            {item.date}
+          </time>
+          <h3 class="text-lg font-semibold text-yellow-300">{item.event}</h3>
+          <p class="text-base text-white/90">{item.quote}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

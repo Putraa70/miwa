@@ -1,0 +1,47 @@
+---
+const to = "Safira";
+const body = `I love you, Safira.
+Aku nggak tahu harus mulai dari mana untuk ungkapin betapa bangganya aku ke kamu… Karena kamu udah melewati banyak proses, sampai akhirnya kamu jadi seseorang yang punya pemikiran sedewasa ini.
+
+Aku ingin berterima kasih kepada orang tuamu, dan juga semua orang di sekitarmu yang telah menyayangimu hingga kamu tumbuh menjadi pribadi sebaik ini.
+Aku udah lama nunggu kamu datang… untuk nemenin tulisan-tulisan cerita aku—yang nantinya akan jadi *cerita kita*—cerita yang suatu hari akan dibaca dan didengar oleh anak-anak kita nanti.
+
+Aku harap, setelah ini… kamu bisa menerima aku, dengan segala kekurangan dan kelebihanku, untuk mencintaimu sepenuhnya.
+Aku.. Aku pengen kasih dunia ini ke kamu, tapi karna itu ga mungkin. aku bakal kasih hal yang paling peberharga buat aku, yaitu duniaku.
+
+`;
+---
+
+<section
+  class="min-h-screen flex flex-col justify-center items-center px-4 py-14"
+>
+  <h2
+    class="text-3xl md:text-4xl font-serif font-bold text-center text-pink-400 mb-6"
+  >
+    Surat untuk {to}
+  </h2>
+  <div
+    class="bg-pink-50/10 border border-pink-300/20 rounded-2xl p-7 md:p-10 font-serif text-lg md:text-xl text-pink-50 leading-relaxed shadow-2xl relative max-w-2xl w-full"
+    style="backdrop-filter: blur(2px);"
+  >
+    <p class="mb-4 whitespace-pre-line">{body}</p>
+    <div
+      class="absolute bottom-4 right-8 text-pink-200 text-sm font-semibold italic"
+    >
+      — Putra
+    </div>
+    <svg
+      width="120"
+      height="30"
+      viewBox="0 0 120 30"
+      fill="none"
+      class="absolute left-5 bottom-2 opacity-70"
+    >
+      <path
+        d="M5 25 Q60 -15 115 25"
+        stroke="#fa4b85"
+        stroke-width="2"
+        fill="none"></path>
+    </svg>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+const { gallery } = Astro.props;
+---
+
+<section
+  class="min-h-screen flex flex-col justify-center items-center px-4 py-16"
+>
+  <h2 class="text-3xl font-bold text-pink-400 mb-8 text-center tracking-wide">
+    Galeri Safira
+  </h2>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 w-full max-w-4xl"
+  >
+    {
+      gallery.map((item: { url: string; caption: string }) => (
+        <div class="bg-pink-50/5 border-2 border-pink-300/20 rounded-xl overflow-hidden shadow-xl flex flex-col transition-transform hover:scale-105 hover:border-pink-400 hover:shadow-pink-200/70 duration-200">
+          <img
+            src={item.url}
+            alt={item.caption}
+            class="w-full h-56 object-cover"
+          />
+          <div class="p-4 text-center text-pink-200 font-medium bg-gradient-to-b from-pink-50/10 via-white/0 to-pink-50/0">
+            {item.caption}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

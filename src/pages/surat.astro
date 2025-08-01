@@ -1,0 +1,11 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Letter from "../components/Letter.astro";
+import { letter } from "../data/letter.js";
+---
+
+<MainLayout>
+  <Navbar />
+  <Letter letter={letter} />
+</MainLayout>

@@ -1,0 +1,125 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Countdown from "../components/Countdown.astro";
+import Hero from "../components/Hero.astro";
+import Feeling from "../components/Feeling.astro";
+import FlowerBirthday from "../components/FlowerBirthday.astro";
+import Letter from "../components/Letter.astro";
+import Gallery from "../components/Gallery.astro";
+import VideoGallery from "../components/VideoGallery.astro";
+import StarBackground from "../components/StarBackground.astro";
+import { gallery } from "../data/gallery.js";
+import { videos } from "../data/videos.js";
+import { letter } from "../data/letter.js";
+---
+
+<MainLayout>
+  <Navbar />
+  <!-- Optional: Background bintang -->
+  <!-- <StarBackground /> -->
+
+  <!-- Countdown tetap di atas -->
+  <Countdown />
+
+  <!-- Konten utama, hanya ditampilkan setelah login -->
+  <div id="main-content" style="display: none">
+    <Hero />
+    <Feeling />
+    <FlowerBirthday />
+    <Letter letter={letter} />
+    <Gallery gallery={gallery} />
+    <VideoGallery videos={videos} />
+    <div
+      class="fixed top-0 left-0 w-screen h-screen overflow-hidden pointer-events-none z-0"
+    >
+      {
+        Array.from({ length: 30 }).map((_, i) => (
+          <div
+            class="love animate-fall"
+            style={`left: ${Math.random() * 100}vw; animation-duration: ${5 + Math.random() * 5}s; animation-delay: ${Math.random() * 5}s;`}
+          >
+            ❤️
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Form login -->
+    <section
+      id="login-section"
+      class="flex flex-col items-center justify-center min-h-screen bg-black/80 z-50 fixed inset-0"
+      style="display: none"
+    >
+      <form
+        id="pw-form"
+        class="bg-white/5 rounded-xl p-8 w-full max-w-sm shadow border border-white/10"
+      >
+        <h2 class="text-2xl font-bold mb-6 text-center text-white">
+          Masukkan Password
+        </h2>
+        <input
+          id="pw-input"
+          type="password"
+          name="password"
+          placeholder="Password..."
+          class="w-full p-3 rounded-lg border border-white/20 bg-black/20 mb-5 text-white placeholder:text-white/60 outline-red-400 focus:ring-2 focus:ring-red-500"
+          required
+        />
+        <button
+          type="submit"
+          class="w-full py-3 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold transition"
+        >
+          Masuk
+        </button>
+        <div id="pw-error" class="text-red-400 mt-2 text-sm text-center hidden">
+          Password salah, coba lagi ya!
+        </div>
+      </form>
+    </section>
+
+    <!-- Login Script -->
+    <script is:inline>
+      const PASSWORD = "lovesafira";
+
+      function ready(fn) {
+        if (document.readyState !== "loading") {
+          fn();
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
+      }
+
+      ready(() => {
+        const isLoggedIn = localStorage.getItem("ndutt-logged") === "1";
+        const mainContent = document.getElementById("main-content");
+        const loginSection = document.getElementById("login-section");
+
+        if (isLoggedIn) {
+          mainContent.style.display = "";
+          loginSection.style.display = "none";
+        } else {
+          mainContent.style.display = "none";
+          loginSection.style.display = "";
+        }
+
+        const form = document.getElementById("pw-form");
+        const input = document.getElementById("pw-input");
+        const error = document.getElementById("pw-error");
+
+        if (form) {
+          form.onsubmit = (e) => {
+            e.preventDefault();
+            if (input.value === PASSWORD) {
+              localStorage.setItem("ndutt-logged", "1"); // ✅ disamakan key-nya
+              error.classList.add("hidden");
+              location.reload();
+            } else {
+              error.classList.remove("hidden");
+            }
+          };
+        }
+      });
+    </script>
+  </div>
+</MainLayout>
